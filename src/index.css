@@ -25,3 +25,21 @@ code {
   border:1px solid black;
   text-align: center;
 }
+
+.black{
+  height:40px;
+  width:40px;
+  border:1px solid black;
+  text-align: center;
+  background-color:black;
+  margin:2px;
+}
+
+.white{
+  height:40px;
+  width:40px;
+  border:1px solid black;
+  text-align: center;
+  background-color:white;
+  margin:2px;
+}

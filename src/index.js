@@ -7,7 +7,7 @@ import * as serviceWorker from "./serviceWorker";
 class Game extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {grid:props.grid};
+    this.state = { grid: props.grid };
     this.iterateGrid = this.iterateGrid.bind(this);
   }
 
@@ -36,7 +36,7 @@ class Game extends React.Component {
         }
       }
     }
-    this.setState({grid:this.props.grid});
+    this.setState({ grid: this.props.grid });
   }
 
   evaluateStatus(noOfNeighbours) {
@@ -80,11 +80,21 @@ class Game extends React.Component {
     setInterval(() => this.iterateGrid(), 1000);
   }
 
+  generateColor(row) {
+    return row.map(function(column) {
+      if (column == 1) {
+        return "black";
+      }
+      return "white";
+    });
+  }
+
   render() {
-    let gridView = this.props.grid.map(row => (
+    let grid = this.props.grid.map(this.generateColor);
+    let gridView = grid.map(row => (
       <div className="row">
         {row.map(column => (
-          <div className="column">{column}</div>
+          <div className={column} />
         ))}
       </div>
     ));
@@ -93,7 +103,16 @@ class Game extends React.Component {
 }
 
 ReactDOM.render(
-  <Game grid={[[0, 1, 0], [0, 1, 0], [0, 1, 0]]} />,
+  <Game
+    grid={[
+      [0, 0, 0, 0, 0, 0],
+      [0, 1, 1, 0, 0, 0],
+      [0, 1, 1, 0, 0, 0],
+      [0, 0, 0, 1, 1, 0],
+      [0, 0, 0, 1, 1, 0],
+      [0, 0, 0, 0, 0, 0]
+    ]}
+  />,
   document.getElementById("root")
 );
 
