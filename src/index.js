@@ -133,7 +133,6 @@ class Setup extends React.Component {
         return 0;
       })
     );
-    console.log(iterationGrid);
     ReactDOM.render(
       <Game grid={iterationGrid} />,
       document.getElementById("root")
@@ -142,7 +141,8 @@ class Setup extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='main-grid'>
+        <h1>Select initial alive cells</h1>
         {this.props.grid.map(row => (
           <div className="row">
             {row.map(column => (
@@ -154,23 +154,28 @@ class Setup extends React.Component {
             ))}
           </div>
         ))}
-        <button onClick={this.startIteration}>done</button>
+        <button className="done-button" onClick={this.startIteration}>
+          done
+        </button>
       </div>
     );
   }
 }
 
+const generateGrid = function(size) {
+  let grid = new Array(size).fill(new Array(size).fill(0));
+  let counter = 0;
+  let gridvalue = grid.map(row =>
+    row.map(column => {
+      counter++;
+      return counter;
+    })
+  );
+  return gridvalue;
+};
+
 ReactDOM.render(
-  <Setup
-    grid={[
-      [1, 2, 3, 4, 5, 6],
-      [7, 8, 9, 10, 11, 12],
-      [13, 14, 15, 16, 17, 18],
-      [19, 20, 21, 22, 23, 24],
-      [25, 26, 27, 28, 29, 30],
-      [31, 32, 33, 34, 35, 36]
-    ]}
-  />,
+  <Setup grid={generateGrid(6)} />,
   document.getElementById("root")
 );
 

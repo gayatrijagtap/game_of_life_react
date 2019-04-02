@@ -20,26 +20,48 @@ code {
 }
 
 .column {
-  height:40px;
-  width:40px;
-  border:1px solid black;
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
   text-align: center;
 }
 
-.black{
-  height:40px;
-  width:40px;
-  border:1px solid black;
+.black {
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
   text-align: center;
-  background-color:black;
-  margin:2px;
+  background-color: black;
+  margin: 2px;
 }
 
-.white{
-  height:40px;
-  width:40px;
-  border:1px solid black;
+.white {
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
   text-align: center;
-  background-color:white;
-  margin:2px;
+  background-color: white;
+  margin: 2px;
+}
+
+.done-button {
+  height: 40px;
+  width: 100px;
+  margin: 20px;
+  border-radius: 5px;
+  font-size: 25px;
+  border-radius: 20px;
+  background-color: white;
+  color: black;
+  text-align: center;
+}
+.done-button:hover {
+  background-color: lightblue;
+}
+
+.main-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
