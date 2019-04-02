@@ -141,7 +141,7 @@ class Setup extends React.Component {
 
   render() {
     return (
-      <div className='main-grid'>
+      <div className="main-grid">
         <h1>Select initial alive cells</h1>
         {this.props.grid.map(row => (
           <div className="row">
@@ -175,7 +175,7 @@ const generateGrid = function(size) {
 };
 
 ReactDOM.render(
-  <Setup grid={generateGrid(6)} />,
+  <Setup grid={generateGrid(20)} />,
   document.getElementById("root")
 );
 

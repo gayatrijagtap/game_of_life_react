@@ -27,8 +27,8 @@ code {
 }
 
 .black {
-  height: 40px;
-  width: 40px;
+  height: 25px;
+  width: 25px;
   border: 1px solid black;
   text-align: center;
   background-color: black;
@@ -36,8 +36,8 @@ code {
 }
 
 .white {
-  height: 40px;
-  width: 40px;
+  height: 25px;
+  width: 25px;
   border: 1px solid black;
   text-align: center;
   background-color: white;
