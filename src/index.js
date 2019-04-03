@@ -9,6 +9,11 @@ class Game extends React.Component {
     super(props);
     this.state = { grid: props.grid };
     this.iterateGrid = this.iterateGrid.bind(this);
+    this.reset = this.reset.bind(this);
+  }
+
+  reset() {
+    window.location.reload();
   }
 
   countNeighbours(row, column, grid) {
@@ -98,7 +103,15 @@ class Game extends React.Component {
         ))}
       </div>
     ));
-    return <div>{gridView}</div>;
+    return (
+      <div className="main-grid">
+        <h1>Game of life</h1>
+        {gridView}
+        <button className="done-button" onClick={this.reset}>
+          Reset
+        </button>
+      </div>
+    );
   }
 }
 
@@ -155,7 +168,7 @@ class Setup extends React.Component {
           </div>
         ))}
         <button className="done-button" onClick={this.startIteration}>
-          done
+          Done
         </button>
       </div>
     );
